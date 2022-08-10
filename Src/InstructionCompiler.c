@@ -1,6 +1,6 @@
 #include "InstructionCompiler.h"
 
-bool *instructioncompiler(bool instruction[8]) { // I DO NOT know how to use malloc T-T
+bool *instructioncompiler(bool instruction[8]) {
     /*
      * Instruction Compiler:
      * > compiles 8 bit instructions into 18 bit internal commands
@@ -17,7 +17,7 @@ bool *instructioncompiler(bool instruction[8]) { // I DO NOT know how to use mal
     static int cycle;
     if (instruction[0] == false && cycle != 1) {
         cycle = 1;
-        for (int i = 0; i < 7; i++) {
+        for (int i= 0; i < 7; i++) {
             instructionHold[i] = instruction[i + 1];
         }
     } else if (instruction[0] == true && cycle != 1) {

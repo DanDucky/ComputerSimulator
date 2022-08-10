@@ -1,7 +1,7 @@
 #include "InstructionCompiler.h"
+#include <stdio.h>
 
 int main (int argc,char* argv[]) {
-	printf("rememberrrrr C\n");
     // TEST INSTRUCTION MOVE MEMO12 MEMO11 KEEP (00010110, 01010110)
     bool instruction[8] = {false, false, false, true, false, true, true, false};
     bool instruction2[8] = {false, true, false, true, false, true, true, false};
