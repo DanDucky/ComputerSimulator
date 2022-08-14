@@ -3,7 +3,8 @@
 
 #include <stdbool.h>
 #include <stdlib.h>
+#include <stdint.h>
 
-bool *instructioncompiler(bool instruction[8]);
+uint8_t *instructioncompiler(uint8_t instruction[8]);
 
 #endif /* INSTRUCTIONCOMPILER_H_ */

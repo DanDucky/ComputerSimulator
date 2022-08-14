@@ -5,6 +5,10 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-uint8_t storagedriver(bool instruction[7]);
+static uint8_t readPos;
+static bool readOnly;
+
+void instructiondriver(bool instruction[7]);
+uint8_t *instructionget();
 
 #endif /* STORAGEDRIVER_H_ */
