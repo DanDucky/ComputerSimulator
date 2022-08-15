@@ -8,7 +8,7 @@
 static uint8_t readPos;
 static bool readOnly;
 
-void instructiondriver(bool instruction[7]);
+void instructiondriver(uint8_t instruction[7]);
 uint8_t *instructionget();
 
 #endif /* STORAGEDRIVER_H_ */
