@@ -5,9 +5,6 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-static uint8_t readPos;
-static bool readOnly;
-
 void instructiondriver(uint8_t instruction[7]);
 uint8_t *instructionget();
 

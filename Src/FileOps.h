@@ -6,7 +6,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-void fileInit(char *file);
-uint8_t *readFile();
+void fileinit(char *file);
+uint8_t *fileread(uint8_t line);
+void fileclose();
 
 #endif /* FILEOPS_H_ */

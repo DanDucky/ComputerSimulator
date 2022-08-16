@@ -2,11 +2,11 @@
 
 FILE *binary;
 
-void fileInit(char *file) {
+void fileinit(char *file) {
     binary = fopen(file, "r");
 }
 
-uint8_t *readFile(int line) { // line is 0 based ( B) )
+uint8_t *fileread(uint8_t line) { // line is 0 based ( B) )
     uint8_t *instructionOut = malloc(8);
     char instructionIn[8];
     fgets(instructionIn, 8, binary);
@@ -17,4 +17,9 @@ uint8_t *readFile(int line) { // line is 0 based ( B) )
     	instructionOut[i] = atoi(&instructionIn[i]);
     }
     return instructionOut;
+}
+
+void fileclose () {
+    free(binary); // I don't really know if this is great, but I think it will work
+    return;
 }
