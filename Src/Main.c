@@ -6,7 +6,6 @@
 
 int main (int argc,char* argv[]) {
     fileinit(argv[0]);
-    free (argv);
     // TEST INSTRUCTION MOVE MEMO12 MEMO11 KEEP (00010110, 01010110)
     //uint8_t instruction[8] = {0, 1, 0, 1, 0, 1, 1, 0};
     //uint8_t instruction2[8] = {0, 1, 0, 1, 0, 1, 1, 0};
@@ -29,5 +28,6 @@ int main (int argc,char* argv[]) {
      */
     // FREE ALL POINTERS PLS
     fileclose();
+    free(argv);
     return 0;
 }

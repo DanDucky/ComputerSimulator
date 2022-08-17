@@ -23,13 +23,18 @@ void instructiondriver(uint8_t instructionIn[7]) {
             for (int i = 0; i < 4; i++) {
                 passDecode[i] = instructionIn[i + 3];
             }
+            if (decode(passDecode, 4) - 1 < 24) {
+            	readPos = (decode(passDecode, 4) - 1) * 8;
+            } else { // 24 25 26 27 28 29 30 31
+            	readPos = decode(passDecode, 4) - 1 + 175;
+            }
     		break;
     	case 1: // READ ONLY
             condition = 0;
     		for (int i = 0; i < 5; i++) {
     			passDecode[i] = instructionIn[i + 3];
     		}
-    		readPos = decode(passDecode, 5);
+    		readPos = decode(passDecode, 5) - 1;
     		break;
     	}
     } else { // handles both BLNK calls (technically GOTO) and handles the fact that sometimes we're not calling GOTO
@@ -45,7 +50,7 @@ uint8_t *instructionget() {
     switch (condition) {
         case 0:
             // ADD IN FUNCTION FROM "FileOps.h"
-            instructionOut = fileread(readPos);
+            instructionOut = fileread(readPos); // TODO account for the fact that readPos will be only the "readPos" that it programmed, meaning the 32bits of steps, not the actual 200 bytes of instructions
             break;
         case 1:
             // GET FROM MEMORY THE SELECTED BYTE (Memo.h?)
